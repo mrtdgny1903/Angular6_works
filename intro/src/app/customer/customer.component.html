@@ -1,0 +1,13 @@
+
+<h1>Current city is {{city}}</h1>
+<ul>
+<div *ngFor="let customer of customers" (click)="selectCustomer(customer)">
+
+  <li *ngIf="customer.age>18">
+    {{ customer.name }} {{ customer.lastName }}
+  </li>
+</div>
+<h1 *ngIf="selectedCustomer; else elseBlock">Seçtiğiniz Kişi: {{ selectedCustomer.name }}</h1>
+</ul>
+
+<ng-template #elseBlock>{{elseFunction()}}</ng-template>
